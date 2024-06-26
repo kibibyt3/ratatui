@@ -10,9 +10,9 @@ use ratatui::{
 };
 
 /// delay the start of the animation so it doesn't start immediately
-const DELAY: usize = 240;
+const DELAY: usize = 180;
 /// higher means more pixels per frame are modified in the animation
-const DRIP_SPEED: usize = 50;
+const DRIP_SPEED: usize = 150;
 /// delay the start of the text animation so it doesn't start immediately after the initial delay
 const TEXT_DELAY: usize = 240;
 
@@ -91,7 +91,7 @@ fn text(frame_count: usize, area: Rect, buf: &mut Buffer) {
         ██  ██    ██    ██    ██    ██    ██    ██    ██    ██  ██
         ██    ██  ██    ██    ██    ██    ██    ██      ████    ██
     "};
-    let logo_text = Text::styled(logo, Color::Rgb(255, 0, 0));
+    let logo_text = Text::styled(logo, Color::Rgb(255, 255, 255));
     let area = centered_rect(area, logo_text.width() as u16, logo_text.height() as u16);
 
     let mask_buf = &mut Buffer::empty(area);
